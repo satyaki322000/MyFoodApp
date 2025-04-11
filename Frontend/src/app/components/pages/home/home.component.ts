@@ -2,7 +2,7 @@
 import { Component } from '@angular/core';
 import { Food } from '../../../shared/models/food';
 import { FoodService } from '../../../services/food.service';
-import { sample_foods } from '../../../../data';
+import { ActivatedRoute } from '@angular/router';
 @Component({
   selector: 'app-home',
   standalone: false,
@@ -12,18 +12,20 @@ import { sample_foods } from '../../../../data';
 export class HomeComponent {
   foods: Food[] = [];
   rating: number = 0;
-  constructor(private foodService: FoodService) {
-    this.foods = this.foodService.getAll();
-    console.log(this.foods);
-  }
-  onRatingChange(newRating: number,index:any) {
-        this.rating = newRating;
-        console.log('New Rating:', this.rating);
-        this.foods[index].stars = this.rating;
-        console.log(this.foods[index]);
-
-        sample_foods[index]= this.foods[index];
-        console.log(sample_foods);
-
+  constructor(private foodService: FoodService,private active:ActivatedRoute) {
+    this.active.params.subscribe((params)=>{
+      console.log("inside params");
+      if(params.searchTerm){
+        this.foods=this.foodService.getallFoodBySearchTerm(params.searchTerm);
       }
+      else if(params.tag){
+        this.foods=this.foodService.getAllFoodsByTag(params.tag);
+      }
+      else{
+        this.foods = this.foodService.getAll();
+        console.log(false);
+      }
+    })
+
+  }
 }
