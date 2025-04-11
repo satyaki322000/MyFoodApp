@@ -13,5 +13,5 @@ export class TagsComponent {
   constructor(FoodService:FoodService){
     this.tags=FoodService.getalltags();
   }
-  
+
 }
