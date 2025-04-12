@@ -12,6 +12,7 @@ import { FoodPageComponent } from './components/pages/food-page/food-page.compon
 import { NgxStarsModule } from 'ngx-stars';
 import { CartPageComponent } from './components/pages/cart-page/cart-page.component';
 import { TitleComponent } from './components/partials/title/title.component';
+import { MotFoundComponent } from './components/partials/mot-found/mot-found.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { TitleComponent } from './components/partials/title/title.component';
     TagsComponent,
     FoodPageComponent,
     CartPageComponent,
-    TitleComponent
+    TitleComponent,
+    MotFoundComponent
   ],
   imports: [
     BrowserModule,

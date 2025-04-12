@@ -5,7 +5,7 @@
     </a>
     <h1>My Food Arena</h1>
     <nav>
-      <ul style="margin-top: 1em ; font-size: large;">
+      <ul style="margin-top: 1em; font-size: large">
         <li><a routerLink="/login">Login</a></li>
         <li class="menu-container">
           <a routerLink="/dashboard">Satyaki</a>
@@ -17,7 +17,9 @@
         </li>
 
         <li>
-          <a routerLink="/cart-page">Cart <span>3</span></a>
+          <a routerLink="/cart-page">Cart
+            <span *ngIf="cartQuantity">{{cartQuantity}}</span>
+          </a>
         </li>
       </ul>
     </nav>

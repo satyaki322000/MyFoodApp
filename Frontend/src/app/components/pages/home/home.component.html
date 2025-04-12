@@ -1,5 +1,8 @@
 <app-search></app-search>
 <app-tags></app-tags>
+<app-mot-found
+[visible]="!foods||!foods.length"
+resetLinkText="Reset Search"></app-mot-found>
 <ul>
   <li *ngFor="let food of foods">
     <div>
@@ -39,7 +42,7 @@
           [size]="2"
           readOnly="false"
           [color]="'gold'"
-          emptyColor="'gray'"
+          emptyColor="'grey'"
         ></ngx-stars>
       </div>
 

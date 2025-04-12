@@ -1,4 +1,4 @@
-## steps i am following:-
+## steps i am following for Frontend:-
 1) created a repository in github named MYFOODAPP
 2) created 2 branches:-
     i) backend
@@ -54,3 +54,29 @@
         b) add ts
         c) add html
         d) add css        
+10) Not Found
+    1) generate component
+        a) add ts
+        b) add html
+        c) add css
+    2) add to pages
+        a) Home Page
+        b) Food Page
+        c) Cart Page         
+
+## steps i am following for Backend:-        
+1) Connect To Backend
+    1) Create backend Folder
+    2) npm init
+    3) npm install typescript
+    4) Create tsconfig.json
+    5) Create .gitignore
+    6) Copy data.ts to backend/src
+    7) npm install express cors
+    8) Create server.ts
+        a) install @types
+        b) add Apis
+    9) npm install nodemon ts-node --save-dev
+    10) Add urs.ts to Frontend
+    11) Add HttpClient module
+    12) Update food service     
