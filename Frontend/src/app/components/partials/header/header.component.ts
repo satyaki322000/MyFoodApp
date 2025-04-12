@@ -8,10 +8,13 @@ import { Component } from '@angular/core';
   styleUrl: './header.component.css'
 })
 export class HeaderComponent {
-  cartQuantity:number = 0;
+  cartQuantity=0;
   constructor(cartService:CartService) {
-    cartService.getCartobservable().subscribe((cart) => {
-      this.cartQuantity = cart.totalCount;
+    cartService.getCartObservable().subscribe((newCart) => {
+      this.cartQuantity = newCart.totalCount;
     })
+   }
+
+  ngOnInit(): void {
   }
 }

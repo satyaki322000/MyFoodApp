@@ -9,12 +9,16 @@ import { Component, Input } from '@angular/core';
 export class TitleComponent {
 
   constructor() { }
+
   @Input()
-  margin?='1rem 0 1rem 0.2rem';
+  title!: string;
+
   @Input()
-  title!:string;
+  margin? = '1rem 0 1rem 0.2rem';
+
   @Input()
-  fontSize?='1.7rem';
+  fontSize? = '1.7rem';
+
   ngOnInit(): void {
   }
 

@@ -9,9 +9,14 @@ import { Tag } from '../../../shared/models/tag';
   styleUrl: './tags.component.css'
 })
 export class TagsComponent {
-  tags?:Tag [];
-  constructor(FoodService:FoodService){
-    this.tags=FoodService.getalltags();
+  tags?:Tag[];
+  constructor(foodService:FoodService) {
+    foodService.getAllTags().subscribe(serverTags => {
+      this.tags = serverTags;
+    });
+   }
+
+  ngOnInit(): void {
   }
 
 }

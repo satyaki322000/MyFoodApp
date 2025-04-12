@@ -1,12 +1,12 @@
 import { Component, Input } from '@angular/core';
 
 @Component({
-  selector: 'app-mot-found',
+  selector: 'app-not-found',
   standalone: false,
-  templateUrl: './mot-found.component.html',
-  styleUrl: './mot-found.component.css'
+  templateUrl: './not-found.component.html',
+  styleUrl: './not-found.component.css'
 })
-export class MotFoundComponent {
+export class NotFoundComponent {
 @Input()
 visible=false;
 @Input()

@@ -8,21 +8,18 @@ import { ActivatedRoute, Router } from '@angular/router';
   styleUrl: './search.component.css'
 })
 export class SearchComponent {
-  searchTerm:any='';
-  constructor(active:ActivatedRoute,private route:Router){
-    active.params.subscribe((params)=>{
-      if(params){
-        this.searchTerm=params.searchTerm||'';
-      }
-    })
+  searchTerm = '';
+  constructor(activatedRoute:ActivatedRoute,private router:Router) {
+    activatedRoute.params.subscribe((params) => {
+      if(params.searchTerm) this.searchTerm = params.searchTerm;
+    });
+   }
+
+  ngOnInit(): void {
   }
 
-  search(term:String){
-    if(term){
-      this.route.navigateByUrl('/search/'+term);
-    }
-    else{
-      this.route.navigateByUrl('/');
-    }
+  search(term:string):void{
+    if(term)
+    this.router.navigateByUrl('/search/'+ term);
   }
 }

@@ -3,6 +3,7 @@ import { Component } from '@angular/core';
 import { Food } from '../../../shared/models/food';
 import { FoodService } from '../../../services/food.service';
 import { ActivatedRoute } from '@angular/router';
+import { Observable } from 'rxjs';
 @Component({
   selector: 'app-home',
   standalone: false,
@@ -11,21 +12,23 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class HomeComponent {
   foods: Food[] = [];
-  rating: number = 0;
-  constructor(private foodService: FoodService,private active:ActivatedRoute) {
-    this.active.params.subscribe((params)=>{
-      console.log("inside params");
-      if(params.searchTerm){
-        this.foods=this.foodService.getallFoodBySearchTerm(params.searchTerm);
-      }
-      else if(params.tag){
-        this.foods=this.foodService.getAllFoodsByTag(params.tag);
-      }
-      else{
-        this.foods = this.foodService.getAll();
-        console.log(false);
-      }
-    })
+  constructor(private foodService: FoodService, activatedRoute: ActivatedRoute) {
+    let foodsObservalbe:Observable<Food[]>;
+    activatedRoute.params.subscribe((params) => {
+      if (params.searchTerm)
+        foodsObservalbe = this.foodService.getAllFoodsBySearchTerm(params.searchTerm);
+      else if (params.tag)
+        foodsObservalbe = this.foodService.getAllFoodsByTag(params.tag);
+      else
+        foodsObservalbe = foodService.getAll();
 
+        foodsObservalbe.subscribe((serverFoods) => {
+          this.foods = serverFoods;
+          console.log(serverFoods);
+        })
+    })
+  }
+
+  ngOnInit(): void {
   }
 }
