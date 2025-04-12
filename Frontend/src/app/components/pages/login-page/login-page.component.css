@@ -1,0 +1,148 @@
+/* Main container for the login page */
+.login-container {
+  display: flex;
+  height: 100vh;
+  width: 100%;
+  animation: fadeIn 1s ease-in-out; /* Add fade-in animation */
+}
+
+/* Left section for the logo */
+.logo-section {
+  flex: 1;
+  background-color: #f8f8f8;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+  transition: transform 0.3s ease; /* Add hover effect */
+}
+
+.logo-section:hover {
+  transform: scale(1.05); /* Slightly enlarge the logo on hover */
+}
+
+.logo-section img {
+  width: 90%;
+  height: auto;
+  object-fit: contain;
+  filter: brightness(1.2);
+}
+
+/* Right section for the login form */
+.form-section {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(10px);
+  padding: 2rem;
+  box-shadow: -5px 0 10px rgba(0, 0, 0, 0.1);
+  animation: slideIn 1s ease-in-out; /* Add slide-in animation */
+}
+
+/* Form container */
+.details {
+  width: 100%;
+  max-width: 400px;
+}
+
+/* Input container styling */
+.input-container {
+  margin-bottom: 1.5rem;
+}
+
+.input-container label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-size: 1rem;
+  color: #333;
+}
+
+.input-container input {
+  width: 100%;
+  padding: 0.8rem;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 0.5rem;
+  background-color: #f9f9f9;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease; /* Add focus effect */
+}
+
+.input-container input:focus {
+  outline: none;
+  border-color: #e72929;
+  box-shadow: 0 0 5px rgba(231, 41, 41, 0.5);
+  background-color: #fff;
+}
+
+/* Error message styling */
+.invalid-feedback {
+  color: red;
+  font-size: 0.9rem;
+  margin-top: 0.5rem;
+}
+
+/* Button styling */
+button {
+  width: 100%;
+  padding: 0.8rem;
+  font-size: 1rem;
+  color: white;
+  background-color: #e72929;
+  border: none;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease; /* Add hover and click effects */
+}
+
+button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+button:hover:not(:disabled) {
+  background-color: #d11a1a;
+  transform: translateY(-2px); /* Slightly lift the button on hover */
+}
+
+button:active:not(:disabled) {
+  transform: translateY(0); /* Reset the button position on click */
+}
+
+/* Signup link styling */
+.signup-link {
+  margin-top: 1rem;
+  text-align: center;
+  font-size: 0.9rem;
+}
+
+.signup-link a {
+  color: #e72929;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.signup-link a:hover {
+  color: #d11a1a;
+  text-decoration: underline;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}

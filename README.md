@@ -79,4 +79,17 @@
     9) npm install nodemon ts-node --save-dev
     10) Add urs.ts to Frontend
     11) Add HttpClient module
-    12) Update food service     
+    12) Update food service  
+
+## steps for Login:-
+1) Login Page
+    1) Generate Component
+        a) add to routes
+        b) add ts 
+        c) add html
+            i) Import Reactive Forms Module
+        d) ass css
+    2) Add Login Api
+        a) Use json
+        b) Add jsonwebtoken
+        c) test using Postman        
