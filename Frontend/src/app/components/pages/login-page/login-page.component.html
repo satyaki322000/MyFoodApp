@@ -1,38 +1,45 @@
 <div class="login-container">
+  <!-- Left Section: Logo -->
   <div class="logo-section">
     <img src="assets/logos/MyLogo-l.jpg" alt="Logo" />
   </div>
+
+  <!-- Right Section: Login Form -->
   <div class="form-section">
     <div class="details">
       <app-title title="Login"></app-title>
-      <form [formGroup]="loginForm" (ngSubmit)="submit()">
-        <div class="input-container">
-          <label>Email</label>
-          <input
-            type="email"
-            placeholder="Email"
-            formControlName="email"
-            [ngClass]="{ 'is-invalid': loginForm.get('email')?.invalid && loginForm.get('email')?.touched }"
-          />
-          <div *ngIf="loginForm.get('email')?.invalid && loginForm.get('email')?.touched" class="invalid-feedback">
-            Please enter a valid email address.
-          </div>
+      <form [formGroup]="loginForm" (ngSubmit)="submit()" class="login-form">
+        <!-- Email Input -->
+        <text-input
+          [control]="fc.email"
+          [showErrorsWhen]="isSubmitted"
+          type="email"
+          label="Email"
+          placeholder="Enter your email"
+          tooltip="We'll never share your email with anyone else."
+        >
+        </text-input>
+
+        <!-- Password Input -->
+        <text-input
+          [control]="fc.password"
+          [showErrorsWhen]="isSubmitted"
+          type="password"
+          label="Password"
+          placeholder="Enter your password"
+          tooltip="Your password must be at least 8 characters long."
+        >
+        </text-input>
+
+        <!-- Forgot Password Link -->
+        <div class="forgot-password">
+          <a routerLink="/forgot-password">Forgot Password?</a>
         </div>
 
-        <div class="input-container">
-          <label>Password</label>
-          <input
-            type="password"
-            placeholder="Password"
-            formControlName="password"
-            [ngClass]="{ 'is-invalid': loginForm.get('password')?.invalid && loginForm.get('password')?.touched }"
-          />
-          <div *ngIf="loginForm.get('password')?.invalid && loginForm.get('password')?.touched" class="invalid-feedback">
-            Password is required.
-          </div>
-        </div>
+        <!-- Login Button -->
+        <default-button text="Login"></default-button>
 
-        <button type="submit" [disabled]="loginForm.invalid">Login</button>
+        <!-- Signup Link -->
         <div class="signup-link">
           Don't have an account? <a routerLink="/signup">Sign up</a>
         </div>

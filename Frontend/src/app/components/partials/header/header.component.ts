@@ -1,3 +1,5 @@
+import { UserService } from '../../../services/user.service';
+import { User } from '../../../shared/models/User';
 import { CartService } from './../../../services/cart.service';
 import { Component } from '@angular/core';
 
@@ -8,13 +10,25 @@ import { Component } from '@angular/core';
   styleUrl: './header.component.css'
 })
 export class HeaderComponent {
+  user!:User;
   cartQuantity=0;
-  constructor(cartService:CartService) {
+  constructor(cartService:CartService,private userService:UserService) {
     cartService.getCartObservable().subscribe((newCart) => {
       this.cartQuantity = newCart.totalCount;
     })
+    userService.userObservable?.subscribe((newUser => {
+      this.user = newUser;
+    }))
    }
 
   ngOnInit(): void {
+  }
+
+  logout(){
+    this.userService.logout();
+  }
+
+  get isAuth(){
+    return this.user.token;
   }
 }

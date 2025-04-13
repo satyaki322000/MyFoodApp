@@ -93,3 +93,31 @@
         a) Use json
         b) Add jsonwebtoken
         c) test using Postman        
+    3) Generate User Service
+        a) Generate User Model
+        b) Add User Subject
+        c) add Login Method
+            a) Add User Urls
+            b) Generate IUserLogin interface
+            c) add ngx-toastr
+                a) Import Module
+                b) Import BrowserAnimationModule
+                c) Add styles in angular.json
+            d) Add to Header
+        d) Add to Local Storage methods
+        e) Add Logout Method
+            a) Add to Header           
+
+## database connectivity
+1) Connect Login API to MONGODB ATLAS
+    1) Moving APIs into routers
+    2) Create MongoDB Atlas
+    3) Create .env file
+    4) Install
+        a) mongoose
+        b) dotenv
+        c) bcryptjs
+        d) jsonwebtoken
+        e) express-async-handler
+    5) Connect to MongoDB Atlas
+    6) Use MongoDB instead of data.ts in apis                
