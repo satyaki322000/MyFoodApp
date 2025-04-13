@@ -109,6 +109,7 @@
             a) Add to Header           
 
 ## database connectivity
+db_pass=M76NSdNIUqZ7CwMG
 1) Connect Login API to MONGODB ATLAS
     1) Moving APIs into routers
     2) Create MongoDB Atlas
@@ -117,7 +118,12 @@
         a) mongoose
         b) dotenv
         c) bcryptjs
-        d) jsonwebtoken
-        e) express-async-handler
+        d) express-async-handler
     5) Connect to MongoDB Atlas
-    6) Use MongoDB instead of data.ts in apis                
+    6) Use MongoDB instead of data.ts in apis       
+
+## Register User
+1) Add Register api
+2) Add Register service method
+3) Add Register link
+4) Add Register Conponent
