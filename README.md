@@ -127,3 +127,39 @@ db_pass=M76NSdNIUqZ7CwMG
 2) Add Register service method
 3) Add Register link
 4) Add Register Conponent
+
+## loading component
+1) Add Image
+2) Add Component
+3) Add Service
+4) Add Interceptor
+
+## checkout page
+1) Create Order Model
+2) Create Checkout page Component
+    a) add to router
+3) Add User to user service
+4) Add Cart to Cart service    
+5) Create Order Item List Component
+6) Adding Map To The Checkout Page
+    1) Add Leaflet npm package
+        a) Add @types/leaflet
+        b) Add Css to angular.json
+    2) Add AddressLatLng to Order Model
+    3) Create Map component
+        a) Add to checkout page
+        b) Add TS
+            a)Change app-map selector to map
+        c) Add Html
+        d) Add CSS
+    4) Add Auth Guard
+7) Save Order
+    1) Add Order Model
+    2) Add Order Status Enum
+    3) Add Auth Middleware
+    4) Add Order Router
+        a) Add Create API
+    5) Add Order Urls to url.ts
+    6) Add Order Service
+        a) Add create Method
+    8) Add Auth Interceptor    

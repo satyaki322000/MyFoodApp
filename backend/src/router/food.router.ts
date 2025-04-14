@@ -9,6 +9,7 @@ router.get("/seed", asyncHandler(async (req, res) => {
     const foods = sample_foods;
     // const food = await FoodModel.insertMany(foods);
     const foodsCount = await FoodModel.countDocuments();
+    console.log(foodsCount)
     if (foodsCount > 0) {
         res.send("Seed is already done!");
         return;
